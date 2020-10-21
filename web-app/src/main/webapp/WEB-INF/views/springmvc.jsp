@@ -12,9 +12,8 @@
 </head>
 
 <body>
-<h1>Khoa hoc Spring MVC</h1>
+<h1>Spring MVC</h1>
 
-<%@ include file="menu.jsp" %>
 </body>
 
 </html>

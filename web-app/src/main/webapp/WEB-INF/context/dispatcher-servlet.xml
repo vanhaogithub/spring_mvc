@@ -35,4 +35,6 @@
    <mvc:interceptors>
         <bean class="com.bachkhoa.interceptor.MenuHandleInterceptor"></bean>
    </mvc:interceptors>
+   <!--user for template bootstrap  -->
+   <mvc:resources mapping="/template/**" location="/template/" />
 </beans>
