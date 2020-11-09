@@ -9,28 +9,20 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "new")
-public class NewEntity {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
+public class NewEntity extends BaseEntity {
+
 	@Column(name = "title")
 	private String title;
-	
+
 	@Column(name = "thumbnail")
 	private String thumbnail;
-	
+
 	@Column(name = "shortdescription", columnDefinition = "TEXT")
 	private String shortDescription;
-	
+
 	@Column(name = "content", columnDefinition = "TEXT")
 	private String content;
 
-	public Long getId() {
-		return id;
-	}
-	
 	public String getTitle() {
 		return title;
 	}

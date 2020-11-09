@@ -21,8 +21,7 @@
 
 	<!-- Footer -->
 	<%@ include file="/common/web/footer.jsp" %>
-	<!-- User Interceptor -->
-	<%@ include file="/common/menu.jsp" %>
+
 	<!-- Bootstrap core JavaScript -->
 	<script src="<c:url value='/template/web/vendor/jquery/jquery.min.js'/>"></script>
 	<script src="<c:url value='/template/web/vendor/bootstrap/js/bootstrap.bundle.min.js'/>"></script>

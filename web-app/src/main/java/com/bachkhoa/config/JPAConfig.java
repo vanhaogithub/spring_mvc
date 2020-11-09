@@ -16,6 +16,8 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.bachkhoa.constant.DataBaseConstant;
+
 @Configuration
 @EnableJpaRepositories(basePackages = { "com.bachkhoa.repository" })
 @EnableTransactionManagement
@@ -47,17 +49,19 @@ public class JPAConfig {
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/bachkhoa");
-		dataSource.setUsername("root");
-		dataSource.setPassword("123456");
+		dataSource.setDriverClassName(DataBaseConstant.DRIVE_NAME);
+		dataSource.setUrl(DataBaseConstant.URL);
+		dataSource.setUsername(DataBaseConstant.USERNAME);
+		dataSource.setPassword(DataBaseConstant.PASSWORD);
 		return dataSource;
 	}
 
 	Properties additionalProperties() {
 		Properties properties = new Properties();
-		properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
-		// properties.setProperty("hibernate.hbm2ddl.auto", "none");
+		//properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+		// properties.setProperty("hibernate.hbm2ddl.auto", "create");
+		properties.setProperty("hibernate.hbm2ddl.auto", "none");
+		properties.setProperty("hibernate.enable_lazy_load_no_trans", "true");
 		return properties;
 	}
 }
