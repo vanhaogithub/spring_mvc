@@ -2,8 +2,14 @@ package com.bachkhoa.service;
 
 import java.util.List;
 
-import com.bachkhoa.model.NewModel;
+import org.springframework.data.domain.Pageable;
+
+import com.bachkhoa.dto.NewDTO;
 
 public interface INewService {
-	List<NewModel> findAll();
+	List<NewDTO> findAll(Pageable pageable);
+	int getTotalItem();
+	NewDTO findById(long id);
+	NewDTO save(NewDTO dto);
+	void delete(long[] ids);
 }
